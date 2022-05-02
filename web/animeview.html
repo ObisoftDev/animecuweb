@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Animecu</title>
+
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/ajax-send.js"></script>
+    <script src="js/functions.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="contenedor">
+            <div class="content-header">
+                <img class="logo" width="50" src="img/logos/logo.png">
+                <a class="a-home" href="home.html">
+                    <h2 class="logotipo">Animecu</h2>
+                </a>
+            </div>
+            <nav>
+                <a href="directorio.html">Animes</a>
+                <a href="home.html" class="activo">Inicio</a>
+                <a href="/delete?id={{animeid}}" style="color:red;" class="activo">Eliminar</a>
+            </nav>
+        </div>
+    </header>
+
+    <div style="background:linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0,0,0,.50) 100%), url(img/animecu-background.jpg);background-size:contain;position:relative;width:100%;height:80%;">
+        <div class="contenedor">
+            <center>
+                <br />
+                <h3 style="color:white;font-family:Georgia;">
+                    <i class="fas fa-play"></i>
+                    &nbsp;{{name}}
+                </h3>
+                <br />
+                <div style="position:relative">
+                    <div style="position:absolute;width:50%;left:50%;transform:translate(-50%,0);margin-top:10px;color:white;">
+                        {{descripcion}}
+                    </div>
+                    <img id="image-poster" src="{{poster}}" />
+                </div>
+                <br />
+                <div class="anime-list">
+                    <div class="contenedor">
+                        <h3 class="titulo" style="text-decoration:underline;">
+                            <i class="fas fa-fire" /></i>
+                            &nbsp;
+                            Capitulos
+                            &nbsp;
+                            <i class="fas fa-fire" /></i>
+                        </h3>
+                        <div id="anime-content">
+                            <center id="center-content"></center>
+                        </div>
+                    </div>
+                </div>
+            </center>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+       server.get("/api/get-latest-episodies?animeid={{animeid}}", function (data, status) {
+            if (status === 200) {
+                result = data.result;
+                result.forEach(epi => {
+                    url = '/video?id=' + epi.id + '&animeid={{animeid}}';
+                    appendEpisodie(epi.name, epi.thumburl, url, epi.id);
+                });
+            }
+        })
+    </script>
+
+    <div class="footer">
+        <p style="color:gray;">@Copyright <a style="color:gray;text-decoration:underline;" href="https://t.me/obisoftdev"><b>ObisoftDev</b></a>. All Right Reserved</p>
+    </div>
+</body>
+</html>

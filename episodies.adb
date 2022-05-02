@@ -1,0 +1,1 @@
+{"name": "01 Rayman Club", "id": "0513926b-fb87-4acd-be1a-094af77e8875", "thumburl": "https://su-link.herokuapp.com/dl/1/AgADq6kxGzMiyUc.jpg", "tags": "", "descripcion": "", "url": "https://cursos.uo.edu.cu/webservice/pluginfile.php/24237/core_competency/userevidence/5172/01%20Rymans%20Club.mp4?forcedownload=1&token=e08178001e2a81da936fd2e98a283dad", "key": "obysoft2001@"}

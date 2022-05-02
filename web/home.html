@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/estilos.css">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+	<title>Animecu</title>
+
+	<script src="js/jquery-3.5.1.js"></script>
+	<script src="js/ajax-send.js"></script>
+	<script src="js/functions.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="contenedor">
+            <div class="content-header">
+                <img class="logo" width="50" src="img/logos/logo.png">
+                <a class="a-home" href="home.html">
+                    <h2 class="logotipo">Animecu</h2>
+                </a>
+            </div>
+            <nav>
+                <a href="/poster?post=episodie">Publicar</a>
+                <a href="directorio.html">Animes</a>
+                <a href="home.html" class="activo">Inicio</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="pelicula-principal">
+            <div class="contenedor">
+                <h3 class="titulo">
+                    <i class="fas fa-play"></i>
+                    Plataforma Anime
+                </h3>
+                <p class="descripcion">
+                    "A mí me da igual que los dioses existan o no, yo soy el amo de mi propio Mundo"
+                    <br><br>
+                    Bienvenidos a la plataforma de anime cubana totalmente gratis. Visualiza y descarga cualquiera de tus animes favoritos con esta idea imnovadora.
+                </p>
+                <button role="button" class="boton">
+                    <a href="https://github.com/Obysoftt/obisoftdev-apps/raw/main/Animecu_1_1.0.apk">
+                        <i class="fab fa-android"></i>
+                        Android
+                    </a>
+                </button>
+                <button role="button" class="boton">
+                    <a href="#">
+                        <i class="fab fa-windows"></i>
+                        Windows
+                    </a>
+                </button>
+                <button role="button" class="boton">
+                    <a href="https://t.me/OtakuS_Channel">
+                        <i class="fab fa-telegram"></i>
+                        Telegram
+                    </a>
+                </button>
+            </div>
+        </div>
+        <div class="anime-list">
+            <div class="contenedor">
+                <h3 class="titulo">
+                    <i class="fas fa-fire" /></i>
+                    &nbsp;
+                    Ultimos Episodios
+                </h3>
+                <div id="anime-content">
+                    <center id="center-content"></center>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="footer">
+        <p style="color:gray;">@Copyright <a style="color:gray;text-decoration:underline;" href="https://t.me/obisoftdev"><b>ObisoftDev</b></a>. All Right Reserved</p>
+    </div>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
+
+    <script type="text/javascript">
+        server.get("/api/get-latest-episodies", function (data, status) {
+            if (status === 200) {
+                result = data.result;
+                result.forEach(epi => {
+                    url = '/video?id=' + epi.id;
+                    appendEpisodie(epi.name, epi.thumburl, url, epi.id);
+                });
+            }
+        })
+    </script>
+
+
+</body>
+</html>

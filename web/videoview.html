@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Animecu</title>
+
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/ajax-send.js"></script>
+    <script src="js/functions.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="contenedor">
+            <div class="content-header">
+                <img class="logo" width="50" src="img/logos/logo.png">
+                <a class="a-home" href="home.html">
+                    <h2 class="logotipo">Animecu</h2>
+                </a>
+            </div>
+            <nav>
+                <a href="directorio.html">Animes</a>
+                <a href="home.html" class="activo">Inicio</a>
+                <a href="/delete?id={{videoid}}" style="color:red;" class="activo">Eliminar</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="pelicula-principal">
+        <div class="contenedor">
+
+            <h4 class="video-title">
+                <i class="fas fa-play"></i>
+                &nbsp;{{name}}
+            </h4>
+
+            <div id="video-view">
+                <img id="video-poster" src="img/video-poster.png" />
+            </div>
+
+            <div class="anime-list" id="anime-list-enabled">
+                <div class="contenedor">
+                    <div class="titulo">
+                        <i class="fas fa-fire" /></i>
+                        &nbsp; Descripcion
+                    </div>
+                    <h5 class="video-title" id="video-description" data-text="{{descripcion}}">{{descripcion}}</h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        var videoid = "{{videoid}}";
+        var poster = "{{poster}}"
+        html = '<video id="video-player" controls autoplay preload="none">';
+        html += '<source src="/api/streamVideo/' + videoid + '" type="video/mp4" codecs="avc1.42E01E, mp4a.40.2"/>';
+        html += '<source src="/api/streamVideo/' + videoid + '" type="video/ogg"/>';
+        html += '<source src="/api/streamVideo/' + videoid + '" type="video/webm" codecs="vp8, vorbis"/>';
+        html += '<h4 style="color:red;text-align:center;">Error En El Servidor</h4>';
+        html += '</video>';
+        $('#video-view').append(html);
+        $('#video-player').css("background", "transparent url(" + poster + ") 50% 50% / cover no-repeat");
+
+        $('#video-poster').click(function () {
+            $('#video-player').trigger($('video').prop('paused') ? 'play' : 'pause');
+            $('#video-poster').fadeOut( "slow", function() {});
+        });
+
+        if ($('#video-description').attr('data-text') == '') {
+            $('#anime-list-enabled').hide();
+        }
+    </script>
+
+    
+</body>
+</html>

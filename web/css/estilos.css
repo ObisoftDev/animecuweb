@@ -1,0 +1,357 @@
+:root {
+	--rojo: #E50914;
+	--fondo: #141414;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+
+label{
+    color:white;
+}
+
+#image-poster {
+    width: 50%;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+.poster-form {
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%);
+    color: white;
+}
+.poster-form input{
+    width: 300px;
+}
+
+.footer {
+    padding: 5px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #000;
+    text-align: center;
+    font-family: Georgia;
+}
+
+
+body {
+	background: var(--fondo);
+	font-family: 'Open Sans', sans-serif;
+	height: 100%;
+}
+
+.contenedor {
+	width: 90%;
+	margin: auto;
+}
+
+header {
+	padding: 10px 0;
+    background:#000;
+}
+
+header .contenedor {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header .contenedor .content-header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header .logotipo {
+	font-family: 'Bebas Neue', cursive;
+	font-weight: normal;
+	color: var(--rojo);
+	font-size: 40px;
+	text-align: left;
+}
+
+header nav a {
+	color: #AAA;
+	text-decoration: none;
+	margin-right: 20px;
+}
+
+header nav a:hover,
+header nav a.activo {
+	color: #FFF;
+}
+
+.a-home{
+	text-decoration: none;
+	margin-left: 10px;
+}
+
+/* ---- ----- ----- Pelicula Principal ----- ----- ----- */
+.pelicula-principal {
+	font-size: 16px;
+	min-height: 32em;
+	color: #fff;
+	background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0,0,0,.50) 100%), url(../img/animecu-background.jpg);
+	background-position: center center;
+	background-size: cover;
+	margin-bottom: 1.12em;
+	display: flex;
+	align-items: end;
+    padding:10px;
+}
+
+.pelicula-principal .contenedor {
+	margin: 0 auto;
+	margin-bottom: 6.25em;
+}
+
+.video-title {
+	font-weight: 600;
+    padding-left:8%;
+	margin-bottom: 0.4em;
+    color:white;
+    margin:10px;
+}
+
+.pelicula-principal .descripcion {
+	font-weight: normal;
+	font-size: 1em;
+	line-height: 1.75em;
+	max-width: 60%;
+	margin-bottom: 1.25em;
+}
+
+.pelicula-principal .boton {
+	background: rgba(0,0,0, 0.5);
+	border: none;
+	border-radius: 0.31em;
+	padding: 0.93em 1.87em;
+	color: #fff;
+	margin-right: 1.25em;
+	cursor: pointer;
+	transition: .3s ease all;
+	font-size: 1.12em;
+}
+
+.pelicula-principal .boton:hover {
+	background: rgba(255,255,255, 0.3);
+	color: #b1b1b1;
+}
+
+.boton {
+    background: rgba(0,0,0, 0.5);
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em 1.87em;
+    color: #fff;
+    margin-right: 1.25em;
+    cursor: pointer;
+    transition: .3s ease all;
+    font-size: 1.12em;
+}
+
+.boton:hover {
+        background: rgba(255,255,255, 0.3);
+        color: #b1b1b1;
+}
+
+.input-style {
+    background: rgba(0,0,0, 0.8);
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em 1.87em;
+    color: #fff;
+    margin-right: 1.25em;
+    transition: .3s ease all;
+    font-size: 1.12em;
+}
+
+.input-style:hover {
+        background: rgba(0,0,0, 0.9);
+        color: #b1b1b1;
+}
+
+.pelicula-principal .boton i {
+	margin-right: 1.25em;
+}
+
+
+.anime-list{
+	padding: 5px;
+	font-size: 13px;
+	color: #fff;
+	background-position: center center;
+	background-size: cover;
+	margin-bottom: 1.12em;
+}
+.anime-list .contenedor {
+	width: 100%;
+	margin: 0;
+	margin-bottom: 6.25em;
+}
+.anime-list .titulo {
+	font-weight: 600;
+	font-size: 2.12em;
+	margin-bottom: 0.4em;
+	margin-left: 5%;
+	color: white;
+}
+
+
+#anime-content {
+	width: 100%;
+}
+.anime-item{
+	display: inline-block;
+	padding: 5px;
+	transition: 0.2s;
+    border-radius:15px;
+}
+.anime-item img{
+    border-radius:10px;
+}
+.anime-item img:hover {
+        border-radius: 15px;
+}
+.anime-item img{
+	width: 200px;
+}
+
+.anime-item:hover {
+        transform: scale(1.05);
+        transform-origin: center;
+        
+}
+
+#video-view {
+    padding:2px;
+    position: relative;
+    width: 100%;
+    background: transparent;
+    transition: 0.1s;
+}
+    #video-view:hover {
+        padding: 2px;
+        position: relative;
+        width: 100%;
+        background: transparent;
+        transform: scale(1.01);
+        transform-origin: center;
+    }
+#video-player {
+    background-color: rgba(0, 0, 0, .50);
+    width: 100%;
+    border-radius: 15px;
+    -webkit-box-shadow: inset 0px 0px 103px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 103px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 103px 0px rgba(0,0,0,0.75);
+}
+
+
+#video-poster {
+    left: 40%;
+    top: 30%;
+    position: absolute;
+    width: 20%;
+    opacity: 0.8;
+}
+    #video-poster:hover {
+        position: absolute;
+        left: 40%;
+        top: 30%;
+        width: 20%;
+        cursor: pointer;
+        opacity: 1;
+    }
+
+/* ---- ----- ----- Media Queries ----- ----- ----- */
+@media screen and (max-width: 800px) {
+	header .logotipo {
+		margin-bottom: 10px;
+		font-size: 30px;
+	}
+	header {
+		height: 60px;
+	}
+	header .logotipo {
+		margin-bottom: 10px;
+		font-size: 30px;
+	}
+	header .logo {
+		margin-bottom: 10px;
+		width: 30px;
+	}
+	header .contenedor {
+		flex-direction: flex;
+		text-align: center;
+	}
+
+	header .contenedor .content-header {
+		flex-direction: flex;
+		text-align: center;
+	}
+
+	.pelicula-principal {
+		font-size: 14px;
+	}
+
+	.pelicula-principal .descripcion {
+		max-width: 100%;
+	}
+	.pelicula-principal .boton {
+		background: rgba(0,0,0, 0.5);
+		border: none;
+		border-radius: 0.31em;
+		padding: 0.93em 1.87em;
+		color: #fff;
+		margin-right: 1.25em;
+		cursor: pointer;
+		transition: .3s ease all;
+		font-size: 1.12em;
+		margin-top: 5px;
+	}
+
+	.anime-list .titulo {
+		font-weight: 600;
+		font-size: 2.12em;
+		margin-bottom: 0.4em;
+		color: white;
+		text-align: center;
+	}
+	
+	.anime-item img{
+		width: 190px;
+	}
+    #video-view {
+        width: 100%;
+        background: transparent;
+    }
+    .video-title {
+        font-weight: 600;
+        font-size: 1.12em;
+        margin-bottom: 0.4em;
+        color: white;
+        margin: 10px;
+        text-align:center;
+    }
+    #image-poster {
+        width: 80%;
+        border-radius: 20px;
+        border: 1px solid black;
+        transition: 0.1s;
+    }
+}
