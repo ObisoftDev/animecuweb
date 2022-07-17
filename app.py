@@ -158,4 +158,4 @@ def delete():
     return render_html('web/delete.html',{'postid':id,'postname':postname,'error':error})
 
 if __name__ == "__main__":
-    app.run(port=8000)
+    app.run()
