@@ -14,6 +14,9 @@ app = Flask(__name__,template_folder=template_dir)
 def static_dir(path):
     return send_from_directory("web", path)
 
+@app.route("/")
+def base(path):
+    return redirect('/home')
 
 @app.route("/api/get-latest-episodies")
 def get_episodies():
