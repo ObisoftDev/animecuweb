@@ -16,7 +16,7 @@ def static_dir(path):
 
 @app.route("/")
 def base(path):
-    return redirect('/home')
+    return redirect('/home.html')
 
 @app.route("/api/get-latest-episodies")
 def get_episodies():
