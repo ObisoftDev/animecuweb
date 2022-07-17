@@ -1,10 +1,5 @@
 {
   "name": "Animecu",
   "description": "Web Para Ver Y Bajar Animes",
-  "repository": "https://github.com/ObisoftDev/animecuweb", 
-  "env": {
-    "bot_token": {
-      "description": "El token del bot"
-    }
-  }
+  "repository": "https://github.com/ObisoftDev/animecuweb"
 }
